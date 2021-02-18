@@ -1,26 +1,12 @@
-import json, pdb
 import  os
-import cv2
-import subprocess
+import argparse
 
-FONT = cv2.FONT_HERSHEY_SIMPLEX
-SAVE = True
-
-
-base_dir = '/mnt/mercury-alpha/aaa-av/'
-videos_dir = base_dir + 'videos/'
-outdir = base_dir + 'rgb-images/'
-
-
-if not os.path.isdir(outdir):
-    os.makedirs(outdir)
-
-def main(vidname):
+def main(vidname, videos_dir, outdir):
 
     base_name = vidname.split('.mp4')[0]
     video_file = videos_dir + vidname
 
-    images_dir = outdir+base_name
+    images_dir = os.path.join(outdir, base_name)
     
     if not os.path.isdir(images_dir):
         os.makedirs(images_dir)
@@ -41,11 +27,17 @@ def main(vidname):
 
 
 if __name__ == '__main__':
+
+    p = argparse.ArgumentParser(description='extract frame from videos')
+    p.add_argument('data_dir', type=str,
+                   help='Video directory where videos are saved.')
+    args = p.parse_args()
+    videos_dir = os.path.join(args.data_dir, 'videos')
     videofiles = os.listdir(videos_dir)
     videofiles = [af for af in videofiles if af.endswith('.mp4')]
-    
+    images_dir = os.path.join(args.data_dir, 'rgb-images')
     print('NUMBER OF VIDEO FILES are:::>', len(videofiles))
     for videofile in sorted(videofiles):
             print('\n annofile ', videofile, '\n')
-            main(videofile)
+            main(videofile, videos_dir, images_dir)
 
