@@ -1,6 +1,6 @@
 # Download and pre-process ROAD dataset
 
-Here, we release the download instructions and pre-processing instructions for ROAD dataset. It is released with a [paper](#) and [3D-RetinaNet](https://github.com/gurkirt/3D-ReintaNet) as baseline code. Which also contains evaluation code.
+Here, we release the download and pre-processing instructions for ROAD dataset. It is released with a [paper](#) and [3D-RetinaNet](https://github.com/gurkirt/3D-ReintaNet) code as a baseline. Which also contains evaluation code.
 
 ## Main Features
 
@@ -18,10 +18,10 @@ Here, we release the download instructions and pre-processing instructions for R
 ## Attribution
 ROAD dataset is build upon [Oxford Robot Car Dataset (OxRD)](https://robotcar-dataset.robots.ox.ac.uk/about/). Please cite the original dataset if it useful in your work, citation can be found [here](https://robotcar-dataset.robots.ox.ac.uk/citation/). 
 
-Similar to original work, this work is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0](http://creativecommons.org/licenses/by-nc-sa/4.0) International License and is intended for non-commercial academic use. If you are interested in using the dataset for commercial purposes please contact original creator [OxRD](https://robotcar-dataset.robots.ox.ac.uk/contact/) for video content and [Fabio](https://cms.brookes.ac.uk/staff/FabioCuzzolin/) and [Gurkirt](http://gurkirt.github.io/) for event annotations.
+Similar to original work [(OxRD)](https://robotcar-dataset.robots.ox.ac.uk/privacy/), this work is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0](http://creativecommons.org/licenses/by-nc-sa/4.0) International License and is intended for non-commercial academic use. If you are interested in using the dataset for commercial purposes please contact original creator [OxRD](https://robotcar-dataset.robots.ox.ac.uk/contact/) for video content and [Fabio](https://cms.brookes.ac.uk/staff/FabioCuzzolin/) and [Gurkirt](http://gurkirt.github.io/) for event annotations.
 
 ## Download
-We release annotations annotated by [Visual Artificial Intelligence Laboratory](https://cms.brookes.ac.uk/staff/FabioCuzzolin/) and  the pre-processed videos from [OxRD](https://robotcar-dataset.robots.ox.ac.uk/about/). Pre-processing includes `demosaic` for RGB conversion, `ffmpeg` for `.mp4` conversion and fixing the frame-rate. More details can be found in [tar2mp4](./tar2mp4/README.md).
+We release annotations annotated by [Visual Artificial Intelligence Laboratory](https://cms.brookes.ac.uk/staff/FabioCuzzolin/) and pre-processed videos from [OxRD](https://robotcar-dataset.robots.ox.ac.uk/about/). Pre-processing includes `demosaic` for RGB conversion, `ffmpeg` for `.mp4` conversion and fixing the frame-rate. More details can be found in [tar2mp4](./tar2mp4/README.md).
 
 You can download the `Train-Val-set` videos and annotation from [Google-Drive link](https://drive.google.com/drive/folders/1hCLlgRqsJBONHgwGPvVu8VWXxlyYKCq-?usp=sharing)
 
@@ -29,7 +29,7 @@ Private video of `Test-set` will be released in accordance with the challenge.
 
 ## Frame-extraction
 
-Baseline code for [3D-RetinaNet](https://github.com/gurkirt/3D-ReintaNet) used in dataset release [paper](#) uses sequences of frames as input. Once you have downloaded the videos from Google-Drive, create a folder name `road` and put annotation under it, create another folder name `videos` under it, put all the videos under a folder name `videos`. Now, your folder structure looks like following:
+Baseline code for [3D-RetinaNet](https://github.com/gurkirt/3D-ReintaNet) used in dataset release [paper](#) uses sequences of frames as input. Once you have downloaded the videos from Google-Drive, create a folder name `road` and put annotation under it, create another folder name `videos` under `road` folder, put all the videos under folder name `videos`. Now, your folder structure looks like:
 
 ```
     road/
@@ -41,7 +41,7 @@ Baseline code for [3D-RetinaNet](https://github.com/gurkirt/3D-ReintaNet) used i
 
 ```
 
-Now, you can use `extract_videos2jpgs.py` to extract frames. Provide path to `road` folder as argument. You will ffmpeg install on your system or with python.
+Now, you can use `extract_videos2jpgs.py` to extract frames. You will need to provide path to `road` folder as an argument. You will need `ffmpeg` installed on your machine or your python should include its binaries, `sudo apt install ffmpeg` should do it on Ubuntu.
 
 ```
 python extract_videos2jpgs.py <path-to-road-folder>/road/
