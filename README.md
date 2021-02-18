@@ -1,6 +1,6 @@
 # Download and pre-process ROAD dataset
 
-Here, we release the download instructions and pre-processing instructions for ROAD dataset. It is released with a [paper]() and [3D-RetinaNet](https://github.com/gurkirt/3D-ReintaNet) as baseline code. Which also contains evaluation code.
+Here, we release the download instructions and pre-processing instructions for ROAD dataset. It is released with a [paper](#) and [3D-RetinaNet](https://github.com/gurkirt/3D-ReintaNet) as baseline code. Which also contains evaluation code.
 
 ## Main Features
 
@@ -29,7 +29,7 @@ Private video of `Test-set` will be released in accordance with the challenge.
 
 ## Frame-extraction
 
-Baseline code for [3D-RetinaNet](https://github.com/gurkirt/3D-ReintaNet) used in dataset release [paper]() uses sequences of frames as input. Once you have downloaded the videos from Google-Drive, create a folder name `road` and put annotation under it, create another folder name `videos` under it, put all the videos under a folder name `videos`. Now, your folder structure looks like following:
+Baseline code for [3D-RetinaNet](https://github.com/gurkirt/3D-ReintaNet) used in dataset release [paper](#) uses sequences of frames as input. Once you have downloaded the videos from Google-Drive, create a folder name `road` and put annotation under it, create another folder name `videos` under it, put all the videos under a folder name `videos`. Now, your folder structure looks like following:
 
 ```
     road/
