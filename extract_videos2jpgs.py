@@ -4,7 +4,7 @@ import argparse
 def main(vidname, videos_dir, outdir):
 
     base_name = vidname.split('.mp4')[0]
-    video_file = videos_dir + vidname
+    video_file = os.path.join(videos_dir, vidname)
 
     images_dir = os.path.join(outdir, base_name)
     
@@ -15,7 +15,7 @@ def main(vidname, videos_dir, outdir):
     imglist = [img for img in imglist if img.endswith('.jpg')]
 
     if len(imglist)<10: # very few or no frames try extracting again
-        command = 'ffmpeg -loglevel panic -i {} -q:v 1 {}/%08d.jpg'.format(video_file, images_dir) # extract at very good quality of 1
+        command = 'ffmpeg  -i {} -q:v 1 {}/%08d.jpg'.format(video_file, images_dir) # extract at very good quality of 1
         print('run', command)
         os.system(command)
     
@@ -37,7 +37,7 @@ if __name__ == '__main__':
     videofiles = [af for af in videofiles if af.endswith('.mp4')]
     images_dir = os.path.join(args.data_dir, 'rgb-images')
     print('NUMBER OF VIDEO FILES are:::>', len(videofiles))
-    for videofile in sorted(videofiles):
-            print('\n annofile ', videofile, '\n')
+    for i, videofile in enumerate(videofiles):
+            print('\n %d videofile '%i, videofile, '\n')
             main(videofile, videos_dir, images_dir)
 
