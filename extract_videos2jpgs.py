@@ -15,7 +15,7 @@ def main(vidname, videos_dir, outdir):
     imglist = [img for img in imglist if img.endswith('.jpg')]
 
     if len(imglist)<10: # very few or no frames try extracting again
-        command = 'ffmpeg  -i {} -q:v 1 {}/%08d.jpg'.format(video_file, images_dir) # extract at very good quality of 1
+        command = 'ffmpeg  -i {} -q:v 1 {}/%05d.jpg'.format(video_file, images_dir) # extract at very good quality of 1
         print('run', command)
         os.system(command)
     
