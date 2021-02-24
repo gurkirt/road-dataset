@@ -1,6 +1,7 @@
 # Download and pre-process ROAD dataset
 
-Here, we release the download and pre-processing instructions for ROAD dataset. It is released with a [paper](https://arxiv.org/pdf/2102.11585.pdf) and [3D-RetinaNet](https://github.com/gurkirt/3D-ReintaNet) code as a baseline. Which also contains evaluation code.
+Here, we release the download and pre-processing instructions for ROAD dataset. It is released with a [paper](https://arxiv.org/pdf/2102.11585.pdf) and [3D-RetinaNet](https://github.com/gurkirt/3D-ReintaNet) code as a baseline. Which also contains evaluation code. ROAD dataset will be used with [The ROAD challenge](https://sites.google.com/view/roadchallangeiccv2021/).
+
 
 ## Main Features
 
