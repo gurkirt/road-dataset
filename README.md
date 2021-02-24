@@ -23,14 +23,14 @@ Similar to original work [(OxRD)](https://robotcar-dataset.robots.ox.ac.uk/priva
 
 If you use ROAD dataset please cite:
 
-        @misc{singh2021road,
-              title={ROAD: The ROad event Awareness Dataset for Autonomous Driving}, 
-              author={Gurkirt Singh and Stephen Akrigg and Manuele Di Maio and Valentina Fontana and Reza Javanmard Alitappeh and Suman Saha and Kossar Jeddisaravi and Farzad Yousefi and Jacob Culley and Tom Nicholson and Jordan Omokeowa and Salman Khan and Stanislao Grazioso and Andrew Bradley and Giuseppe Di Gironimo and Fabio Cuzzolin},
-              year={2021},
-              eprint={2102.11585},
-              archivePrefix={arXiv},
-              primaryClass={cs.CV}
-        }
+    @misc{singh2021road,
+          title={ROAD: The ROad event Awareness Dataset for Autonomous Driving}, 
+          author={Gurkirt Singh and Stephen Akrigg and Manuele Di Maio and Valentina Fontana and Reza Javanmard Alitappeh and Suman Saha and Kossar Jeddisaravi and Farzad Yousefi and Jacob Culley and Tom Nicholson and Jordan Omokeowa and Salman Khan and Stanislao Grazioso and Andrew Bradley and Giuseppe Di Gironimo and Fabio Cuzzolin},
+          year={2021},
+          eprint={2102.11585},
+          archivePrefix={arXiv},
+          primaryClass={cs.CV}
+    }
         
 
 ## Download
