@@ -34,6 +34,9 @@ If you use ROAD dataset please cite:
         
 
 ## Download
+
+BY DOWNLOADING THE DATASET VIDEOS YOU ARE BOUNDED TO ADHERE TO PRIVACY GUIDELINES OF (OxRD)[https://robotcar-dataset.robots.ox.ac.uk/privacy/]. PLEASE VISIT (OxRD)[https://robotcar-dataset.robots.ox.ac.uk/privacy/] PRIVACY POLICY FOR MORE DETAILS. VIDEOS FROM OxRD AND PROVIDED ANNOTATIONS ARE ONLY FOR ACADEMIC PURPOSE ONLY. 
+
 We release annotations annotated by [Visual Artificial Intelligence Laboratory](https://cms.brookes.ac.uk/staff/FabioCuzzolin/) and pre-processed videos from [OxRD](https://robotcar-dataset.robots.ox.ac.uk/about/). Pre-processing includes `demosaic` for RGB conversion, `ffmpeg` for `.mp4` conversion and fixing the frame-rate. More details can be found in [tar2mp4](./tar2mp4/README.md).
 
 You can download the `Train-Val-set` videos and annotation by changing your current directory to the road directory and running the bash file [get_dataset.sh](./road/get_dataset.sh) will automatically download the annotation files and video directory in the currect directory (road).
