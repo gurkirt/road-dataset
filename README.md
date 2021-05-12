@@ -91,4 +91,6 @@ Now, the `road` directory would look like.
 
 ```
 
-After this you are ready to train or test [3D-RetinaNet](https://github.com/gurkirt/3D-ReintaNet).
+## Evaluation
+
+After this you are ready to train or test [3D-RetinaNet](https://github.com/gurkirt/3D-ReintaNet). Which contain dataloader function and evaluation scripts. 
