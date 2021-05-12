@@ -12,28 +12,16 @@ def main(video_name, input_images_dir, output_images_dir):
     
     video_plot_dir = os.path.join(output_images_dir, video_name)
     
-    # vidfile = video_name[:-4]
-    
     if not os.path.isdir(video_plot_dir):
         os.makedirs(video_plot_dir)
     
-    # video_handle = cv2.VideoCapture(vidfile)
-    video_writter_object =  cv2.VideoWriter()
-
-    with open(annofile,'r') as f:
-        db = json.load(f)
-
-    # pdb.set_trace()
     color = (0,0,255)
     color1 = (255,0,5)
-
     frames = db['frames']
 
     for f in sorted(frames.keys()):
-        print(f)
         in_id = int(f)
         # input_image_path = '{:s}/{:05d}.png'.format(imagedir, 3*(in_id-1)+1)
-        # import cv2
 
         color = (0, 0, 255)
         color1 = (255, 0, 5)
