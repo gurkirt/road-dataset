@@ -1,6 +1,7 @@
 # Download and pre-process ROAD dataset
 
-Here, we release the download and pre-processing instructions for ROAD dataset. It is released with a [paper](#) and [3D-RetinaNet](https://github.com/gurkirt/3D-ReintaNet) code as a baseline. Which also contains evaluation code.
+Here, we release the download and pre-processing instructions for ROAD dataset. It is released with a [paper](https://arxiv.org/pdf/2102.11585.pdf) and [3D-RetinaNet](https://github.com/gurkirt/3D-ReintaNet) code as a baseline. Which also contains evaluation code. ROAD dataset will be used with [The ROAD challenge](https://sites.google.com/view/roadchallangeiccv2021/).
+
 
 ## Main Features
 
@@ -20,7 +21,22 @@ ROAD dataset is build upon [Oxford Robot Car Dataset (OxRD)](https://robotcar-da
 
 Similar to original work [(OxRD)](https://robotcar-dataset.robots.ox.ac.uk/privacy/), this work is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0](http://creativecommons.org/licenses/by-nc-sa/4.0) International License and is intended for non-commercial academic use. If you are interested in using the dataset for commercial purposes please contact original creator [OxRD](https://robotcar-dataset.robots.ox.ac.uk/contact/) for video content and [Fabio](https://cms.brookes.ac.uk/staff/FabioCuzzolin/) and [Gurkirt](http://gurkirt.github.io/) for event annotations.
 
+If you use ROAD dataset please cite:
+
+    @misc{singh2021road,
+          title={ROAD: The ROad event Awareness Dataset for Autonomous Driving}, 
+          author={Gurkirt Singh and Stephen Akrigg and Manuele Di Maio and Valentina Fontana and Reza Javanmard Alitappeh and Suman Saha and Kossar Jeddisaravi and Farzad Yousefi and Jacob Culley and Tom Nicholson and Jordan Omokeowa and Salman Khan and Stanislao Grazioso and Andrew Bradley and Giuseppe Di Gironimo and Fabio Cuzzolin},
+          year={2021},
+          eprint={2102.11585},
+          archivePrefix={arXiv},
+          primaryClass={cs.CV}
+    }
+        
+
 ## Download
+
+BY DOWNLOADING THE DATASET VIDEOS YOU ARE BOUNDED TO ADHERE TO PRIVACY GUIDELINES OF [OxRD](https://robotcar-dataset.robots.ox.ac.uk/privacy/). PLEASE VISIT [OxRD](https://robotcar-dataset.robots.ox.ac.uk/privacy/) PRIVACY POLICY FOR MORE DETAILS. VIDEOS FROM OxRD AND PROVIDED ANNOTATIONS ARE ONLY FOR ACADEMIC PURPOSE. 
+
 We release annotations annotated by [Visual Artificial Intelligence Laboratory](https://cms.brookes.ac.uk/staff/FabioCuzzolin/) and pre-processed videos from [OxRD](https://robotcar-dataset.robots.ox.ac.uk/about/). Pre-processing includes `demosaic` for RGB conversion, `ffmpeg` for `.mp4` conversion and fixing the frame-rate. More details can be found in [tar2mp4](./tar2mp4/README.md).
 
 You can download the `Train-Val-set` videos and annotation by changing your current directory to the road directory and running the bash file [get_dataset.sh](./road/get_dataset.sh) will automatically download the annotation files and video directory in the currect directory (road).
@@ -30,11 +46,11 @@ bash get_dataset.sh
 OR 
 You can download the `Train-Val-set` videos and annotation from [Google-Drive link](https://drive.google.com/drive/folders/1hCLlgRqsJBONHgwGPvVu8VWXxlyYKCq-?usp=sharing)
 
-Private video of `Test-set` will be released in accordance with the challenge.
+Private video of `Test-set` will be released in accordance with the [The ROAD challenge](https://sites.google.com/view/roadchallangeiccv2021/).
 
 ## Frame-extraction
 
-Baseline code for [3D-RetinaNet](https://github.com/gurkirt/3D-ReintaNet) used in dataset release [paper](#) uses sequences of frames as input. Once you have downloaded the videos from Google-Drive, create a folder name `road` and put annotation under it, create another folder name `videos` under `road` folder, put all the videos under folder name `videos`. Now, your folder structure looks like:
+Baseline code for [3D-RetinaNet](https://github.com/gurkirt/3D-ReintaNet) used in dataset release [paper](https://arxiv.org/pdf/2102.11585.pdf) uses sequences of frames as input. Once you have downloaded the videos from Google-Drive, create a folder name `road` and put annotation under it, create another folder name `videos` under `road` folder, put all the videos under folder name `videos`. Now, your folder structure looks like:
 
 ```
     road/
@@ -75,4 +91,6 @@ Now, the `road` directory would look like.
 
 ```
 
-After this you are ready to train or test [3D-RetinaNet](https://github.com/gurkirt/3D-ReintaNet).
+## Evaluation
+
+After this you are ready to train or test [3D-RetinaNet](https://github.com/gurkirt/3D-ReintaNet). Which contain dataloader function and evaluation scripts. 
