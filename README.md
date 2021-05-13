@@ -96,11 +96,7 @@ Annotation for train validation split are saved in single `json` file named `roa
 
 The first level of `road_trainval_v1.0.json` contain dataset level information like classes of each label type.
 
-```
-
-dict_keys(['all_input_labels', 'all_av_action_labels', 'av_action_labels', 'agent_labels', 'action_labels', 'duplex_labels', 'triplet_labels', 'loc_labels', 'db', 'label_types', 'all_duplex_labels', 'all_triplet_labels', 'all_agent_labels', 'all_loc_labels', 'all_action_labels', 'duplex_childs', 'triplet_childs'])
-
-``` 
+- Here are all the fields: `dict_keys(['all_input_labels', 'all_av_action_labels', 'av_action_labels', 'agent_labels', 'action_labels', 'duplex_labels', 'triplet_labels', 'loc_labels', 'db', 'label_types', 'all_duplex_labels', 'all_triplet_labels', 'all_agent_labels', 'all_loc_labels', 'all_action_labels', 'duplex_childs', 'triplet_childs'])`
 - `all_input_labels`: All classes used to annotate the dataset
 - `label_types` :  It is list of all the label types `['agent', 'action', 'loc', 'duplex', 'triplet']`.
 - `all_av_action_labels`: All classes used to annotate AV actions
@@ -116,7 +112,27 @@ Finally, `db` field contain all `frame` and `tube` level annotation for all the 
 - Each video annotation comes with following fields
     - `['split_ids', 'agent_tubes', 'action_tubes', 'loc_tubes', 'duplex_tubes', 'triplet_tubes', 'av_action_tubes', 'frame_labels', 'frames', 'numf']`
     - `split_ids` contains the split id assigned this videos out of `'test', 'train_1','val_1',........'val_3'`. 
+    - `numf` is number of frames in the video.
+    - `frame_labels` is AV-action class ids assigned for each frame of the videos. 
+    - `frames` contains frame-level annotations
+        - for the each frame of the video, e.g. for `'1'` frame, frames['1'] contains `['annotated', 'rgb_image_id', 'width', 'height', 'av_action_ids', 'annos', 'input_image_id']`
+        - `annotated` is flag to indicate if frame is annotated or not.
+        - `rgb_image_id` = `input_image_id` is id of physical frame extracted by ffmpeg.
+        - `av_action_ids`: AV action labels
+        - `annos` : contains annotations of a frame with bounding boxes with unique keys like `annos['4585'] =['b19111',]` from a frame number `'4585'`, which is unique in whole dataset.
+        - `annos['b09']` has following keys `dict_keys(['box', 'agent_ids', 'loc_ids', 'action_ids', 'duplex_ids', 'triplet_ids', 'tube_uid'])`
+            - `box` is normalized (0,1) bounding box coordinate with `xmin, ymin, xmax, ymax`
+            - `tube_uid` id of the agent tube it belongs.
+            - fields ending with `_ids` contains class ids of respective label type.
+    - The fields ending `tubes` contains tube-level annotation of respective label-type. 
+        - for example, `db['2014-06-25-16-45-34_stereo_centre_02']['agent_tubes']` contains tubes with fields like `['544e13cc-001-01', 'a074d1bf-001-01', 'e97b3e4c-001-01', 'edb6d66a-005-01', .........]`
+        - each tube has following fields `dict_keys(['label_id', 'annos'])`
+            - `label_id` is class id from respective label type.
+            - `annos` is dictinary with keys made of frame_ids, e.g. `['agent_tubes']['10284a58-002-01']['annos'].keys()` >> `dict_keys(['4585', '4586', ......, '4629', '4630'])`
+            - `annos['4585'] = 'b19111'` stores unique key which points to frame-level annotations in frame number '4585'.
 
 ## Evaluation
 
 After this you are ready to train or test [3D-RetinaNet](https://github.com/gurkirt/3D-ReintaNet). Which contain dataloader class and evaluation scripts for all the tasks in ROAD dataset. 
+
+Evaluation function are stored in (3D-RetinaNet/modules/evaluation.py)[https://github.com/gurkirt/3D-RetinaNet/blob/master/modules/evaluation.py].
