@@ -136,3 +136,11 @@ Finally, `db` field contain all `frame` and `tube` level annotation for all the 
 After this you are ready to train or test [3D-RetinaNet](https://github.com/gurkirt/3D-ReintaNet). Which contain dataloader class and evaluation scripts for all the tasks in ROAD dataset. 
 
 Evaluation function are stored in (3D-RetinaNet/modules/evaluation.py)[https://github.com/gurkirt/3D-RetinaNet/blob/master/modules/evaluation.py].
+
+## Plotting annotations
+
+You can use `plot_annots.py` to plot the annotation to inspect the dataset. It will plot for the videos in `road/rgb-images/`. You will need setup dataset like it is set in Frame-extraction](Frame-extraction) sections. It will dump plotted images, then you can use `ffmpeg` to convert that into a video like shown below.
+
+[![Watch the video](https://img.youtube.com/vi/5rWeFtprJuQ/maxresdefault.jpg)](https://youtu.be/5rWeFtprJuQ)
+
+
