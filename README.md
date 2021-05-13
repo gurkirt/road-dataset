@@ -141,6 +141,6 @@ Evaluation function are stored in (3D-RetinaNet/modules/evaluation.py)[https://g
 
 You can use `plot_annots.py` to plot the annotation to inspect the dataset. It will plot for the videos in `road/rgb-images/`. You will need setup dataset like it is set in Frame-extraction](Frame-extraction) sections. It will dump plotted images, then you can use `ffmpeg` to convert that into a video like shown below.
 
-[![Watch the video](https://img.youtube.com/vi/5rWeFtprJuQ/maxresdefault.jpg)](https://youtu.be/5rWeFtprJuQ)
+[!Watch the video](https://youtu.be/5rWeFtprJuQ)
 
 
