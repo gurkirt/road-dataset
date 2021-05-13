@@ -90,7 +90,33 @@ Now, the `road` directory would look like.
                 - ........*.jpg
 
 ```
+## Annotation Structure
+
+Annotation for train validation split are saved in single `json` file named `road_trainval_v1.0.json`. It is located under root directory of the dataset as can be seen above.
+
+The first level of `road_trainval_v1.0.json` contain dataset level information like classes of each label type.
+
+```
+
+dict_keys(['all_input_labels', 'all_av_action_labels', 'av_action_labels', 'agent_labels', 'action_labels', 'duplex_labels', 'triplet_labels', 'loc_labels', 'db', 'label_types', 'all_duplex_labels', 'all_triplet_labels', 'all_agent_labels', 'all_loc_labels', 'all_action_labels', 'duplex_childs', 'triplet_childs'])
+
+``` 
+- `all_input_labels`: All classes used to annotate the dataset
+- `label_types` :  It is list of all the label types `['agent', 'action', 'loc', 'duplex', 'triplet']`.
+- `all_av_action_labels`: All classes used to annotate AV actions
+- `av_action_labels`: Classes finally being used for AV actions
+-  Remaining fields ending with `labels` follows the same logic and AV actions described in above line.
+- `duplex_childs` and `triplet_childs` contain ids of child classes form `agent`, `action` or `location` labels to construct `duplex` or `triplet` labels, 
+- `duplex` is constructed using `agent` and `action` classes.
+- `event` or `triplet` is constructed  using `agent`, `action`, and `location` classes.
+
+Finally, `db` field contain all `frame` and `tube` level annotation for all the videos. 
+
+- To access annotation for a vides, use db['2014-06-25-16-45-34_stereo_centre_02'], where `'2014-06-25-16-45-34_stereo_centre_02'` is name of a video.
+- Each video annotation comes with following fields
+    - `['split_ids', 'agent_tubes', 'action_tubes', 'loc_tubes', 'duplex_tubes', 'triplet_tubes', 'av_action_tubes', 'frame_labels', 'frames', 'numf']`
+    - `split_ids` contains the split id assigned this videos out of `'test', 'train_1','val_1',........'val_3'`. 
 
 ## Evaluation
 
-After this you are ready to train or test [3D-RetinaNet](https://github.com/gurkirt/3D-ReintaNet). Which contain dataloader function and evaluation scripts. 
+After this you are ready to train or test [3D-RetinaNet](https://github.com/gurkirt/3D-ReintaNet). Which contain dataloader class and evaluation scripts for all the tasks in ROAD dataset. 
