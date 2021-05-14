@@ -45,7 +45,7 @@ bash get_dataset.sh
 ```
 Alternatively, you can download the `Train-Val-set` videos and annotations from [our Google-Drive folder](https://drive.google.com/drive/folders/1hCLlgRqsJBONHgwGPvVu8VWXxlyYKCq-?usp=sharing).
 
-The private video of `Test-set` will be released in accordance with the [The ROAD challenge](https://sites.google.com/view/roadchallangeiccv2021/) rules.
+The private video of `Test-set` will be released in accordance with [The ROAD challenge](https://sites.google.com/view/roadchallangeiccv2021/) rules.
 
 ## Frame-extraction
 
