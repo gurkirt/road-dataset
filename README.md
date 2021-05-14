@@ -1,6 +1,6 @@
 # Download and pre-process ROAD dataset
 
-Here, we release the download and pre-processing instructions for ROAD dataset. It is released with a [paper](https://arxiv.org/pdf/2102.11585.pdf) and [3D-RetinaNet](https://github.com/gurkirt/3D-ReintaNet) code as a baseline. Which also contains evaluation code. ROAD dataset will be used with [The ROAD challenge](https://sites.google.com/view/roadchallangeiccv2021/).
+Here we provide the **download** and **pre-processing instructions** for the ROAD dataset, that is released through our paper [ROAD: The ROad event Awareness Dataset for Autonomous Driving](https://arxiv.org/pdf/2102.11585.pdf) and uses [3D-RetinaNet](https://github.com/gurkirt/3D-ReintaNet) code as a **baseline**, which also contains the evaluation code. The ROAD dataset will be used within [The ROAD challenge](https://sites.google.com/view/roadchallangeiccv2021/).
 
 
 ## Main Features
@@ -17,11 +17,11 @@ Here, we release the download and pre-processing instructions for ROAD dataset. 
 - 122k annotated with self/ego-actions of AV as well, e.g. AV-on-the-mov, AV-Stopped, AV-turning-right, AV-Overtaking etc.
 
 ## Attribution
-ROAD dataset is build upon [Oxford Robot Car Dataset (OxRD)](https://robotcar-dataset.robots.ox.ac.uk/about/). Please cite the original dataset if it useful in your work, citation can be found [here](https://robotcar-dataset.robots.ox.ac.uk/citation/). 
+ROAD dataset is build upon [Oxford Robot Car Dataset (OxRD)](https://robotcar-dataset.robots.ox.ac.uk/about/). If you find the original dataset useful in your work, please cite it using the citation that can be found [here](https://robotcar-dataset.robots.ox.ac.uk/citation/). 
 
-Similar to original work [(OxRD)](https://robotcar-dataset.robots.ox.ac.uk/privacy/), this work is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0](http://creativecommons.org/licenses/by-nc-sa/4.0) International License and is intended for non-commercial academic use. If you are interested in using the dataset for commercial purposes please contact original creator [OxRD](https://robotcar-dataset.robots.ox.ac.uk/contact/) for video content and [Fabio](https://cms.brookes.ac.uk/staff/FabioCuzzolin/) and [Gurkirt](http://gurkirt.github.io/) for event annotations.
+Similar to the original dataset [(OxRD)](https://robotcar-dataset.robots.ox.ac.uk/privacy/), the ROAD dataset is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0](http://creativecommons.org/licenses/by-nc-sa/4.0) International License and is intended for non-commercial academic use. If you are interested in using the dataset for commercial purposes, please contact original creator [OxRD](https://robotcar-dataset.robots.ox.ac.uk/contact/) for video content and [Fabio](https://cms.brookes.ac.uk/staff/FabioCuzzolin/) and [Gurkirt](http://gurkirt.github.io/) for event annotations.
 
-If you use ROAD dataset please cite:
+If you use ROAD dataset, please cite it using the following:
 
     @misc{singh2021road,
           title={ROAD: The ROad event Awareness Dataset for Autonomous Driving}, 
@@ -35,22 +35,21 @@ If you use ROAD dataset please cite:
 
 ## Download
 
-BY DOWNLOADING THE DATASET VIDEOS YOU ARE BOUNDED TO ADHERE TO PRIVACY GUIDELINES OF [OxRD](https://robotcar-dataset.robots.ox.ac.uk/privacy/). PLEASE VISIT [OxRD](https://robotcar-dataset.robots.ox.ac.uk/privacy/) PRIVACY POLICY FOR MORE DETAILS. VIDEOS FROM OxRD AND PROVIDED ANNOTATIONS ARE ONLY FOR ACADEMIC PURPOSE. 
+BY DOWNLOADING THE DATASET VIDEOS YOU ARE BOUNDED TO ADHERE TO PRIVACY GUIDELINES OF [OxRD](https://robotcar-dataset.robots.ox.ac.uk/privacy/). PLEASE VISIT [OxRD](https://robotcar-dataset.robots.ox.ac.uk/privacy/) PRIVACY POLICY FOR MORE DETAILS. THE VIDEOS FROM [OxRD](https://robotcar-dataset.robots.ox.ac.uk/privacy/) AND PROVIDED ANNOTATIONS ARE ONLY FOR ACADEMIC PURPOSE. 
 
-We release annotations annotated by [Visual Artificial Intelligence Laboratory](https://cms.brookes.ac.uk/staff/FabioCuzzolin/) and pre-processed videos from [OxRD](https://robotcar-dataset.robots.ox.ac.uk/about/). Pre-processing includes `demosaic` for RGB conversion, `ffmpeg` for `.mp4` conversion and fixing the frame-rate. More details can be found in [tar2mp4](./tar2mp4/README.md).
+We release the annotations created by [Visual Artificial Intelligence Laboratory](https://cms.brookes.ac.uk/staff/FabioCuzzolin/), and the sub-set of pre-processed videos from [OxRD](https://robotcar-dataset.robots.ox.ac.uk/about/). Pre-processing includes `demosaic` for RGB conversion, `ffmpeg` for `.mp4` conversion and fixing the frame-rate. More details can be found in [tar2mp4](./tar2mp4/README.md).
 
-You can download the `Train-Val-set` videos and annotation by changing your current directory to the road directory and running the bash file [get_dataset.sh](./road/get_dataset.sh) will automatically download the annotation files and video directory in the currect directory (road).
+You can download the `Train-Val-set` videos and corresponding annotations by changing your current directory to the road directory and running the bash file [get_dataset.sh](./road/get_dataset.sh). This will automatically download the annotation files and video directory in the current directory (road).
 ```
 bash get_dataset.sh
 ```
-OR 
-You can download the `Train-Val-set` videos and annotation from [Google-Drive link](https://drive.google.com/drive/folders/1hCLlgRqsJBONHgwGPvVu8VWXxlyYKCq-?usp=sharing)
+Alternatively, you can download the `Train-Val-set` videos and annotations from [our Google-Drive folder](https://drive.google.com/drive/folders/1hCLlgRqsJBONHgwGPvVu8VWXxlyYKCq-?usp=sharing).
 
-Private video of `Test-set` will be released in accordance with the [The ROAD challenge](https://sites.google.com/view/roadchallangeiccv2021/).
+The private video of `Test-set` will be released in accordance with the [The ROAD challenge](https://sites.google.com/view/roadchallangeiccv2021/) rules.
 
 ## Frame-extraction
 
-Baseline code for [3D-RetinaNet](https://github.com/gurkirt/3D-ReintaNet) used in dataset release [paper](https://arxiv.org/pdf/2102.11585.pdf) uses sequences of frames as input. Once you have downloaded the videos from Google-Drive, create a folder name `road` and put annotation under it, create another folder name `videos` under `road` folder, put all the videos under folder name `videos`. Now, your folder structure looks like:
+The **baseline code** for [3D-RetinaNet](https://github.com/gurkirt/3D-ReintaNet) used in the dataset release [paper](https://arxiv.org/pdf/2102.11585.pdf) uses sequences of frames as input. Once you have downloaded the videos from Google-Drive, create a folder name `road` and put the annotations under it, then create another folder named `videos` under `road` folder, and put all the videos under the folder named `videos`. Now, your folder structure should look like this:
 
 ```
     road/
@@ -62,13 +61,14 @@ Baseline code for [3D-RetinaNet](https://github.com/gurkirt/3D-ReintaNet) used i
 
 ```
 
-Now, you can use `extract_videos2jpgs.py` to extract frames. You will need to provide path to `road` folder as an argument. You will need `ffmpeg` installed on your machine or your python should include its binaries, `sudo apt install ffmpeg` should do it on Ubuntu.
+Before extracting the frames, you will need to make sure that you have `ffmpeg` installed on your machine or your python should include its binaries. If you are using Ubuntu, the following command should be sufficient: `sudo apt install ffmpeg`.
 
+You can now use `extract_videos2jpgs.py` to extract the frames. You will need to provide the path to the `road` folder as an argument:
 ```
 python extract_videos2jpgs.py <path-to-road-folder>/road/
 ```
 
-Now, the `road` directory would look like.
+Now, the `road` directory should look like this:
 
 ```
     road/
@@ -92,9 +92,9 @@ Now, the `road` directory would look like.
 ```
 ## Annotation Structure
 
-Annotation for train validation split are saved in single `json` file named `road_trainval_v1.0.json`. It is located under root directory of the dataset as can be seen above.
+The annotations for the train and validation split are saved in single `json` file named `road_trainval_v1.0.json`, which is located under root directory of the dataset as it can be seen above.
 
-The first level of `road_trainval_v1.0.json` contain dataset level information like classes of each label type.
+The first level of `road_trainval_v1.0.json` contains dataset level information like classes of each label type:
 
 - Here are all the fields: `dict_keys(['all_input_labels', 'all_av_action_labels', 'av_action_labels', 'agent_labels', 'action_labels', 'duplex_labels', 'triplet_labels', 'loc_labels', 'db', 'label_types', 'all_duplex_labels', 'all_triplet_labels', 'all_agent_labels', 'all_loc_labels', 'all_action_labels', 'duplex_childs', 'triplet_childs'])`
 - `all_input_labels`: All classes used to annotate the dataset
@@ -106,7 +106,7 @@ The first level of `road_trainval_v1.0.json` contain dataset level information l
 - `duplex` is constructed using `agent` and `action` classes.
 - `event` or `triplet` is constructed  using `agent`, `action`, and `location` classes.
 
-Finally, `db` field contain all `frame` and `tube` level annotation for all the videos. 
+Finally, the `db` field contains all `frame` and `tube` level annotations for all the videos:
 
 - To access annotation for a vides, use db['2014-06-25-16-45-34_stereo_centre_02'], where `'2014-06-25-16-45-34_stereo_centre_02'` is name of a video.
 - Each video annotation comes with following fields
@@ -133,14 +133,12 @@ Finally, `db` field contain all `frame` and `tube` level annotation for all the 
 
 ## Evaluation
 
-After this you are ready to train or test [3D-RetinaNet](https://github.com/gurkirt/3D-ReintaNet). Which contain dataloader class and evaluation scripts for all the tasks in ROAD dataset. 
+Now that you have the dataset and are familiar with its structure, you are ready to train or test [3D-RetinaNet](https://github.com/gurkirt/3D-ReintaNet), which contains a dataloader class and evaluation scripts required for all the tasks in ROAD dataset. 
 
-Evaluation function are stored in (3D-RetinaNet/modules/evaluation.py)[https://github.com/gurkirt/3D-RetinaNet/blob/master/modules/evaluation.py].
+You can find the **evaluation** functions in [3D-RetinaNet/modules/evaluation.py](https://github.com/gurkirt/3D-RetinaNet/blob/master/modules/evaluation.py).
 
 ## Plotting annotations
+Please **note** that you need to setup the dataset structure like it is set in the [Frame-extraction](#Frame-extraction) section!
+In order to inspect the dataset, you can use `plot_annots.py` to plot the annotations for the videos in `road/rgb-images/`. This will dump plotted images, then you can use `ffmpeg` to convert them into a [video](https://youtu.be/5rWeFtprJuQ) like shown below:
 
-You can use `plot_annots.py` to plot the annotation to inspect the dataset. It will plot for the videos in `road/rgb-images/`. You will need setup dataset like it is set in Frame-extraction](Frame-extraction) sections. It will dump plotted images, then you can use `ffmpeg` to convert that into a video like shown below.
-
-[!Watch the video](https://youtu.be/5rWeFtprJuQ)
-
-
+[![ROAD](video_pic.png)](https://www.youtube.com/watch?v=5rWeFtprJuQ "Road-dataset sample with annotations")
