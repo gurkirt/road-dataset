@@ -1,6 +1,6 @@
 # Download and pre-process ROAD dataset
 
-Here we provide the **download** and **pre-processing instructions** for the ROAD dataset, that is released through our TPAMI paper [ROAD: The ROad event Awareness Dataset for Autonomous Driving](https://www.computer.org/csdl/journal/tp/5555/01/09712346/1AZL0P4dL1e) and uses [3D-RetinaNet](https://github.com/gurkirt/3D-ReintaNet) code as a **baseline**, which also contains the evaluation code. The ROAD dataset will be used within [The ROAD challenge](https://eval.ai/web/challenges/challenge-page/1059/overview).
+Here we provide the **download** and **pre-processing instructions** for the ROAD dataset, that is released through our TPAMI paper: [ROAD: The ROad event Awareness Dataset for Autonomous Driving](https://www.computer.org/csdl/journal/tp/5555/01/09712346/1AZL0P4dL1e) and uses [3D-RetinaNet](https://github.com/gurkirt/3D-ReintaNet) code as a **baseline**, which also contains the evaluation code. The ROAD dataset will be used within [The ROAD challenge](https://eval.ai/web/challenges/challenge-page/1059/overview).
 
 
 ## Main Features
