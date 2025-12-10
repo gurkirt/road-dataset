@@ -46,9 +46,15 @@ BY DOWNLOADING THE DATASET VIDEOS YOU ARE BOUNDED TO ADHERE TO PRIVACY GUIDELINE
 
 We release the annotations created by [Visual Artificial Intelligence Laboratory](https://cms.brookes.ac.uk/staff/FabioCuzzolin/), and the sub-set of pre-processed videos from [OxRD](https://robotcar-dataset.robots.ox.ac.uk/about/). Pre-processing includes `demosaic` for RGB conversion, `ffmpeg` for `.mp4` conversion and fixing the frame-rate. More details can be found in [tar2mp4](./tar2mp4/README.md).
 
-You can download the `Train-Val-set` videos and corresponding annotations by changing your current directory to the road directory and running the bash file [get_dataset.sh](./road/get_dataset.sh). This will automatically download the annotation files and video directory in the current directory (road).
+You can download the `Train-Val-set` videos and corresponding annotations by changing your current directory to the road directory and running the bash file [get_dataset.sh](./road/get_dataset.sh) or using Python script [get_dataset.py](./road/get_dataset.py). This will automatically download the annotation files and video directory in the current directory (road).
+
+Bash version:
 ```
 bash get_dataset.sh
+```
+Python version:
+```
+python get_dataset.py
 ```
 Alternatively, you can download the `Train-Val-set` videos and annotations from [our Google-Drive folder](https://drive.google.com/drive/folders/1hCLlgRqsJBONHgwGPvVu8VWXxlyYKCq-?usp=sharing).
 
